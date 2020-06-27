@@ -2,7 +2,7 @@ const CF_KEY = process.env.CF_KEY;
 const CF_EMAIL = process.env.CF_EMAIL;
 
 const ROUTER_ADDR = process.env.ROUTER_ADDR;
-const PASSWD = process.env.PASSWORD;
+const PASSWD = process.env.ROUTER_PASSWD;
 
 const ZONE = process.env.ZONE;
 const DDNS_NAME = process.env.DDNS_NAME;
@@ -57,8 +57,8 @@ const main = async () => {
 
         while (true) {
             await r.getPublicKey();
-	    await r.login();
-	    const { ipaddr } = await r.wanStatus();
+            await r.login();
+            const { ipaddr } = await r.wanStatus();
 
             const rr = { type: 'A', proxied: false, ttl: 1, name: DDNS_NAME, content: ipaddr };
             const { result } = await cf.dnsRecords.edit(zone.id, ddnsrr.id, rr);
