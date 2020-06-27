@@ -65,7 +65,7 @@ const main = async () => {
 
             console.log(result);
 
-            sleep(6e4);
+            await sleep(6e4);
         }
 
 
