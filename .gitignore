@@ -1,0 +1,7 @@
+# Generated on crash by NPM
+npm-debug.log
+yarn-error.log
+
+# Static artifacts
+node_modules
+
