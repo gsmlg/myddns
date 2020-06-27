@@ -6,6 +6,7 @@ ENV CF_KEY=cloudflare-api-key \
  CF_EMAIL=cloudflare-email \
  ROUTER_ADDR=192.168.1.1 \
  ROUTER_PASSWD=admin \
+ DAEMON=false \
  ZONE=gsmlg.org \
  DDNS_NAME=ddns.gsmlg.org
 

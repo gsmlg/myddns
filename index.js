@@ -7,6 +7,8 @@ const PASSWD = process.env.ROUTER_PASSWD;
 const ZONE = process.env.ZONE;
 const DDNS_NAME = process.env.DDNS_NAME;
 
+const DAEMON = `${process.env.DAEMON}`;
+
 const { Router } = require('tplink-router-api-sdk');
 
 const cf = require('cloudflare')({
@@ -65,9 +67,12 @@ const main = async () => {
 
             console.log(result);
 
-            await sleep(6e4);
+            if (['yes', 'true', 't', 'y'].includes(DAEMON.toLowerCase())) {
+                await sleep(6e4);
+            } else {
+                break;
+            }
         }
-
 
     } catch(e) {
         console.error(e);

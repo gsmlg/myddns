@@ -11,5 +11,6 @@ Settings environment:
 - `ROUTER_PASSWD`: router admin password
 - `ZONE`: cloudflare dns zone
 - `DDNS_NAME`: ddns recore name (fqdn)
+- `DAEMON`: Daemon mode (value: true/yes), run every 60 seconds, otherwise, exit after update record.
 
-Automate update dns record every 60 seconds.
+
